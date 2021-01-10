@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JTaylor Education Extension</title>
+    <!-- import Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Link Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- link Javascript/JQuery -->
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="col-sm-12 header mt-1 row">
+            <!-- Main Logo -->
+            <a href="https://www.jtayloreducation.com" target="blank"><img src="Images/MAIN_LOGO.jpg" alt="JTaylor_Ed Logo" class="logo-icon fade-in" height="125"></a>
+            <!-- Title & app info -->
+            <p class='title fade-in'><span id='mainTitle'> J Taylor Education </span><br/>
+                <span id="subTitle"> Depth & Complexity</span><br>
+                <span id='info'> © <span id='date'></span> / <span id='version'></span> </span><br>
+            </p>
+        </div>
+
+        <!-- selection area for user -->
+        <div class="d-flex justify-content-center mt-2 fade-in" id='selection'>
+            <select class='form-control' id='options'>
+                <option selected="true" disabled="disabled">Select Icon Style</option>
+                <optgroup label="Icons Only">
+                    <option id='background' value='1'>Icons with Background</option>
+                    <option id='noBackground' value='2'>Icons No Background</option>
+                    <option id='blackWhite' value='6'>Icons Black & White</option>
+                </optgroup>
+                <optgroup label="Icons with Words">
+                    <option id='wordsBackground' value='4'>Icons with Background</option>
+                    <option id='wordsNoBackground' value='13'>Icons No Background</option>
+                    <option id='blackWhitespanish' value='5'>Icons Black & White</option>
+                </optgroup>
+                <optgroup label="Emojis">
+                    <option id='emoji' value='7'>Emojis with Background</option>
+                    <option id='emojiNoBackground' value='8'>Emojis No Background</option>
+                    <option id='emojiBlackWhite' value='9'>Emojis Black & White</option>
+                </optgroup>
+                <optgroup label="Iconos en Español">
+                    <option id='spanishBackground' value='10'>Iconos Españoles Con Fondo</option>
+                    <option id='spanishBackground' value='11'>Iconos Españoles Sin Fondo</option>
+                    <option id='blackWhitespanish' value='12'>Iconos Españoles Blanco y Negro</option>
+                </optgroup>
+                <optgroup label="Icon Bars">
+                    <option id='iconBars' value='14'>All Icon Bars</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- <div class="text-center mt-2 fade-in" id='message'>
+            <p style="font-weight: bold; text-align: center;">Please sign in using the login pop-up</p>
+            <p style="text-align: center;">If you do not have a login, please go to <a href="https://www.jtayloreducation.com/" target="blank">JTaylorEduction.com</a> to register.</p>
+        </div> -->
+
+        <div class="d-flex justify-content-center">
+
+            <!-- Icons with backgrounds -->
+            <div class="modal-iconsWithBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-medium-solid-no-words..png" alt="Across Disciplines" height="60" class="icon" draggable="true" id="icon1">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-solid-medium-no-words.png" alt="Big Idea" height="60" class="icon" draggable="true" id="icon2">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-medium-solid-no-words..png" alt="Details" height="60" class="icon" draggable="true" id='icon3'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-medium-solid-no-words.png" alt="Language of Discipline" height="60" class="icon" draggable="true" id='icon4' >
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-medium-solid-no-words..png" alt="Multiple Perspectives" height="60" class="icon" draggable="true" id='icon5'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-medium-solid-no-words..png" alt="Over Time" height="60" class="icon" id='icon6' draggable="true">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-medium-solid-no-words..png" alt="Rules" height="60" class="icon" id='icon7' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-medium-solid-no-words..png" alt="Patterns" height="60" class="icon" id='icon8' draggable="true">
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-medium-solid-no-words..png" alt="Ethics" height="60" class="icon" id='icon9' draggable="true">
+                    </div>
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-medium-solid-no-words..png" alt="Trends" height="60" class="icon" id='icon10' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-medium-solid-no-words..png" alt="Unanswered Questions" height="60" class="icon" draggable="true" id='icon11'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-medium-solid-no-words..png" alt="Origin" height="60" class="icon" id='icon12' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-medium-solid-no-words..png" alt="Contribution" height="60" class="icon" id='icon13' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-medium-solid-no-words..png" alt="Parallel" height="60" class="icon" id='icon14' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-medium-solid-no-words..png" alt="Convergence" height="60" class="icon" id='icon15' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-medium-solid-no-words..png" alt="Paradox" height="60" class="icon" id='icon16' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icons with no backgrounds -->
+            <div class="modal-iconsNoBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-medium-outline-no-words.png" alt="Across Disciplines" height=auto width="60px" draggable="true" class="icon" id='icon17'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-medium-outline-no-words.png" alt="Big Idea" height=auto width="60px" draggable="true" class="icon" id='icon18'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-medium-outline-no-words.png" alt="Details" height=auto width="60px" draggable="true" class="icon" id='icon19'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-medium-outline-no-words.png" alt="Language of Discipline" draggable="true" height=auto width="60px" class="icon" id='icon20'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-medium-outline-no-words.png" alt="Multiple Perspectives" height=auto width="60px" draggable="true" class="icon" id='icon21'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-medium-outline-no-words.png" alt="Over Time" height=auto width="60px" draggable="true" class="icon" id='icon22'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-medium-outline-no-words.png" alt="Rules" height=auto width="60px" draggable="true" class="icon" id='icon23'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-medium-outline-no-words.png" alt="Patterns" height=auto width="60px" draggable="true" class="icon" id='icon24'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-medium-outline-no-words.png" alt="Ethics" height=auto width="60px" draggable="true" class="icon" id='icon25'>
+                    </div>
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-medium-outline-no-words.png" alt="Trends" height=auto width="60px" draggable="true" class="icon" id='icon26'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-medium-outline-no-words.png" alt="Unanswered Questions" draggable="true" height=auto width="60px" class="icon" id='icon27'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-medium-outline-no-words.png" alt="Origin" height="60px" width="60px" class="icon" id='icon28' draggable="true">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-medium-outline-no-words.png" alt="Contribution" height="60px" width=auto class="icon" id='icon29' draggable="true" >
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-medium-outline-no-words.png" alt="Parallel" height="60px" width="60px" class="icon" id='icon30' draggable="true">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-medium-outline-no-words.png" alt="Convergence" height="60px" width="60px" class="icon" id='icon31' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-medium-outline-no-words.png" alt="Paradox" height="60px" width="60px" class="icon" id='icon32' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Black & White Icons no Background -->
+            <div class="modal-blackWhiteIcons mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/M_BW_icons_outlined_no-words-45.png" alt="Across Disciplines" height=auto width="60px" draggable="true" class="icon" id='icon33'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-BW-medium-outline-no-words.png" alt="Big Idea" height=auto width="60px" draggable="true" class="icon" id='icon34'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-BW-medium-outline-no-words.png" alt="Details" height=auto width="60px" draggable="true" class="icon" id='icon35'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-BW-medium-outline-no-words.png" alt="Language of Discipline" draggable="true" height=auto width="60px" class="icon" id='icon36'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-BW-medium-outline-no-words.png" alt="Multiple Perspectives" height=auto width="60px" draggable="true" class="icon" id='icon37'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-BW-medium-outline-no-words.png" alt="Over Time" height=auto width="60px" draggable="true" class="icon" id='icon38'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-BW-medium-outline-no-words.png" alt="Rules" height=auto width="60px" draggable="true" class="icon" id='icon39'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-BW-medium-outline-no-words.png" alt="Patterns" height=auto width="60px" draggable="true" class="icon" id='icon40'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-BW-medium-outline-no-words.png" alt="Ethics" height=auto width="60px" draggable="true" class="icon" id='icon41'>
+                    </div>
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-BW-medium-outline-no-words.png" alt="Trends" height=auto width="60px" draggable="true" class="icon" id='icon42'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-BW-medium-outline-no-words.png" alt="Unanswered Questions" draggable="true" height=auto width="60px" class="icon" id='icon43'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-medium-outline-no-words.png" alt="Origin" height="60px" width="60px" class="icon" id='icon44' draggable="true">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-medium-outline-no-words.png" alt="Contribution" height="60px" width="auto" class="icon" id='icon45' draggable="true" >
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-medium-outline-no-words.png" alt="Parallel" height="60px" width="60px" class="icon" id='icon46' draggable="true">
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-medium-outline-no-words.png" alt="Convergence" height="60px" width="60px" class="icon" id='icon47' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-medium-outline-no-words.png" alt="Paradox" height="60px" width="60px" class="icon" id='icon48' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spanish Icons No Background -->
+            <div class="modal-spanishNoBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/A-traves-de-las-Disciplinas-outline.png" alt="Across Disciplines" height="60" draggable="true" class="icon" id='icon49'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Generallizacion-outline.png" alt="Big Idea" height="60" draggable="true" class="icon" id='icon50'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Detalles-outline.png" alt="Details" height="60" draggable="true" class="icon" id='icon51'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Idioma-Disciplina-outline.png" alt="Language of Discipline" draggable="true" height="60" class="icon" id='icon52'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Perpectivas-Distintas-outline.png" alt="Multiple Perspectives" height="60" draggable="true" class="icon" id='icon53'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/A-Travel-del-Tiempo-outline.png" alt="Over Time" height="60" draggable="true" class="icon" id='icon54'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Reglamentos-outline.png" alt="Rules" height="60" draggable="true" class="icon" id='icon55'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patrones-outline.png" alt="Patterns" height="60" draggable="true" class="icon" id='icon56'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyableS mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Etica-outline.png" alt="Ethics" height="60" draggable="true" class="icon" id='icon57'>
+                    </div>
+                    <div class="copyableS mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Tendencias-outline.png" alt="Trends" height="60" draggable="true" class="icon" id='icon58'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Preguntas-no-Resueltas-outline.png" alt="Unanswered Questions" draggable="true" height="60" class="icon" id='icon59'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origen-outline.png" alt="Origin" height="60" class="icon" id='icon60' draggable="true">
+                    </div>
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribucion-outline.png" alt="Contribution" height="60" class="icon" id='icon61' draggable="true" >
+                    </div>
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paralelo-outline.png" alt="Parallel" height="60" class="icon" id='icon62' draggable="true">
+                    </div>
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergencia-outline.png" alt="Convergence" height="60" class="icon" id='icon63' draggable="true">
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradoja.png" alt="Paradox" height="60" class="icon" id='icon64' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Spanish Icons Black & White -->
+            <div class="modal-spanishBlackWhite mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/A-Travel-de-las-Disciplinas-BW-outline.png" alt="Across Disciplines" height="60" draggable="true" class="icon" id='icon65'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Generalizacion-BW-outline.png" alt="Big Idea" height="60" draggable="true" class="icon" id='icon66'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Detalles-BW-outline.png" alt="Details" height="60" draggable="true" class="icon" id='icon67'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Idioma-de-la-Disciplina-BW-outline.png" alt="Language of Discipline" draggable="true" height="60" class="icon" id='icon68'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Perspectivas-Distintas-BW-outline.png" alt="Multiple Perspectives" height="60" draggable="true" class="icon" id='icon69'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/A-travel-del-tiempo-BW-outline.png" alt="Over Time" height="60" draggable="true" class="icon" id='icon70'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Reglamentos-BW-outline.png" alt="Rules" height="60" draggable="true" class="icon" id='icon71'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patrones-BW-outline.png" alt="Patterns" height="60" draggable="true" class="icon" id='icon72'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyableS mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Etica-BW-outline.png" alt="Ethics" height="60" draggable="true" class="icon" id='icon73'>
+                    </div>
+                    <div class="copyableS mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Tendencias-BW-outline.png" alt="Trends" height="60" draggable="true" class="icon" id='icon74'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Preguntas-No-Resueltas-BW-outline.png" alt="Unanswered Questions" draggable="true" height="60" class="icon" id='icon75'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origen-outline.png" alt="Origin" height="60" class="icon" id='icon76' draggable="true">
+                    </div>
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribucion-outline.png" alt="Contribution" height="60" class="icon" id='icon77' draggable="true" >
+                    </div>
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paralelo-outline.png" alt="Parallel" height="60" class="icon" id='icon78' draggable="true">
+                    </div>
+                    <div class="copyableS mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergencia-outline.png" alt="Convergence" height="60" class="icon" id='icon79' draggable="true">
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradoja.png" alt="Paradox" height="60" class="icon" id='icon80' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spanish Icons with Background -->
+            <div class="modal-spanishBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/A-Traves-del-las-Disciplinas-solid.png" alt="Across Disciplines" height="60" draggable="true" class="icon" id='icon81'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Generalizacion-solid.png" alt="Big Idea" height="60" draggable="true" class="icon" id='icon82'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Detalles-solid.png" alt="Details" height="60" draggable="true" class="icon" id='icon83'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Idioma-Disciplina-solid.png" alt="Language of Discipline" draggable="true" height="60" class="icon" id='icon84'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Perpsectivas-Distintas-solid.png" alt="Multiple Perspectives" height="60" draggable="true" class="icon" id='icon85'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/A-Traves-del-Tiempo-solid.png" alt="Over Time" height="60" draggable="true" class="icon" id='icon86'>
+                    </div>
+                    <div class="copyableS mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Reglamentos-solid.png" alt="Rules" height="60" draggable="true" class="icon" id='icon87'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patrones-solid.png" alt="Patterns" height="60" draggable="true" class="icon" id='icon88'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyableS mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Etica-solid.png" alt="Ethics" height="60" draggable="true" class="icon" id='icon89'>
+                    </div>
+                    <div class="copyableS mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-solid.png" alt="Trends" height="60" draggable="true" class="icon" id='icon90'>
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Resueltas-No-Preguntas-solid.png" alt="Unanswered Questions" draggable="true" height="60" class="icon" id='icon91'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origen-solid.png" alt="Origin" height="60" class="icon" id='icon92' draggable="true">
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribucion-solid.png" alt="Contribution" height="60" class="icon" id='icon93' draggable="true" >
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paralelo-solid.png" alt="Parallel" height="60" class="icon" id='icon94' draggable="true">
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergencia-solid.png" alt="Convergence" height="60" class="icon" id='icon95' draggable="true">
+                    </div>
+                    <div class="copyableS">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradoja-solid.png" alt="Paradox" height="60" class="icon" id='icon96' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icon words with Background -->
+            <div class="modal-wordsBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-medium-solid-words.png" alt="Across Disciplines" height="60" draggable="true" class="icon" id='icon97'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-medium-solid-words.png" alt="Big Idea" height="60" draggable="true" class="icon" id='icon98'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-medium-solid-words.png" alt="Details" height="60" draggable="true" class="icon" id='icon99'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-medium-solid-words.png" alt="Language of Discipline" draggable="true" height="60" class="icon" id='icon100'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-medium-solid-words.png" alt="Multiple Perspectives" height="60" draggable="true" class="icon" id='icon101'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-medium-solid-words.png" alt="Over Time" height="60" draggable="true" class="icon" id='icon102'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-medium-solid-words.png" alt="Rules" height="60" draggable="true" class="icon" id='icon103'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Pattners-medium-solid-words.png" alt="Patterns" height="60" draggable="true" class="icon" id='icon104'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-medium-solid-words.png" alt="Ethics" height="60" draggable="true" class="icon" id='icon105'>
+                    </div>
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-medium-solid-words.png" alt="Trends" height="60" draggable="true" class="icon" id='icon106'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-medium-solid-words.png" alt="Unanswered Questions" draggable="true" height="60" class="icon" id='icon107'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-medium-solid-words.png" alt="Origin" height="60" class="icon" id='icon108' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-medium-solid-words.png" alt="Contribution" height="60" class="icon" id='icon109' draggable="true" >
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-medium-solid-words.png" alt="Parallel" height="60" class="icon" id='icon110' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-medium-solid-words.png" alt="Convergence" height="60" class="icon" id='icon111' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-medium-solid-words.png" alt="Paradox" height="60" class="icon" id='icon112' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icon words no Background -->
+            <div class="modal-wordsNoBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-medium-outline-with-words.png" alt="Across Disciplines" height="60" draggable="true" class="icon" id='icon113'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-medium-outline-with-words.png" alt="Big Idea" height="60" draggable="true" class="icon" id='icon114'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-medium-outline-with-words.png" alt="Details" height="60" draggable="true" class="icon" id='icon115'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-medium-outline-with-words-17.png" alt="Language of Discipline" draggable="true" height="60" class="icon" id='icon116'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-medium-outline-with-words.png" alt="Multiple Perspectives" height="60" draggable="true" class="icon" id='icon117'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-medium-outline-with-words.png" alt="Over Time" height="60" draggable="true" class="icon" id='icon118'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-medium-outline-with-words.png" alt="Rules" height="60" draggable="true" class="icon" id='icon119'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-medium-outline-with-words.png" alt="Patterns" height="60" draggable="true" class="icon" id='icon120'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-medium-outline-with-words.png" alt="Ethics" height="60" draggable="true" class="icon" id='icon121'>
+                    </div>
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-medium-outline-with-words.png" alt="Trends" height="60" draggable="true" class="icon" id='icon122'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-medium-outline-with-words.png" alt="Unanswered Questions" draggable="true" height="60" class="icon" id='icon123'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-medium-outline-with-words.png" alt="Origin" height="60" class="icon" id='icon124' draggable="true">
+                    </div>
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-medium-outline-with-words.png" alt="Contribution" height="60" class="icon" id='icon125' draggable="true" >
+                    </div>
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-medium-outline-with-words.png" alt="Parallel" height="60" class="icon" id='icon126' draggable="true">
+                    </div>
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-medium-outline-with-words.png" alt="Convergence" height="60" class="icon" id='icon127' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-medium-outline-with-words.png" alt="Paradox" height="60" class="icon" id='icon128' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Black & White with Words -->
+            <div class="modal-blackWhiteWords mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-BW-medium-outline-words.png" alt="Across Disciplines" height="100" draggable="true" class="icon" id='icon129'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-BW-medium-outline-words.png" alt="Big Idea" height="60" draggable="true" class="icon" id='icon130'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-BW-medium-outline-words.png" alt="Details" height="60" draggable="true" class="icon" id='icon131'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-BW-medium-outline-words.png" alt="Language of Discipline" draggable="true" height="60" class="icon" id='icon132'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-BW-medium-outline-words.png" alt="Multiple Perspectives" height="60" draggable="true" class="icon" id='icon133'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-BW-medium-outline-words.png" alt="Over Time" height="60" draggable="true" class="icon" id='icon134'>
+                    </div>
+                    <div class="copyable mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-BW-medium-outline-words.png" alt="Rules" height="60" draggable="true" class="icon" id='icon135'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-BW-medium-outline-words.png" alt="Patterns" height="60" draggable="true" class="icon" id='icon136'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-BW-medium-outline-words.png" alt="Ethics" height="60" draggable="true" class="icon" id='icon137'>
+                    </div>
+                    <div class="copyable mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-BW-medium-outline-words.png" alt="Trends" height="60" draggable="true" class="icon" id='icon138'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-BW-medium-outline-words.png" alt="Unanswered Questions" draggable="true" height="60" class="icon" id='icon139'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-BW-medium-outline-words.png" alt="Origin" height="60" class="icon" id='icon140' draggable="true">
+                    </div>
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-BW-medium-outline-words.png" alt="Contribution" height="60" class="icon" id='icon141' draggable="true" >
+                    </div>
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-BW-medium-outline-words.png" alt="Parallel" height="60" class="icon" id='icon142' draggable="true">
+                    </div>
+                    <div class="copyable mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-BW-medium-outline-words.png" alt="Convergence" height="60" class="icon" id='icon143' draggable="true">
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-BW-medium-outline-words.png" alt="Paradox" height="60" class="icon" id='icon144' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emojis with Background -->
+            <div class="modal-emojisBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyableB mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-small-solid-no-words.png" alt="Across Disciplines"  height= 45 draggable="true" class="icon" id='icon145'>
+                    </div>
+                    <div class="copyableB mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-small-solid-no-words.png" alt="Big Idea"  height= 45 draggable="true" class="icon" id='icon146'>
+                    </div>
+                    <div class="copyableB mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-small-solid-no-words.png" alt="Details"  height= 45 draggable="true" class="icon" id='icon147'>
+                    </div>
+                    <div class="copyableB">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-small-solid-no-words.png" alt="Language of Discipline" height= 45 draggable="true"  class="icon" id='icon148'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyableB mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-small-solid-no-words.png" alt="Multiple Perspectives"  height= 45 draggable="true" class="icon" id='icon149'>
+                    </div>
+                    <div class="copyableB mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-small-solid-no-words.png" alt="Over Time"  height= 45 draggable="true" class="icon" id='icon150'>
+                    </div>
+                    <div class="copyableB mr-2">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-small-solid-no-words.png" alt="Rules"  height= 45 draggable="true" class="icon" id='icon151'>
+                    </div>
+                    <div class="copyableB">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-small-solid-no-words.png" alt="Patterns"  height= 45 draggable="true" class="icon" id='icon152'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyableB mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-small-solid-no-words.png" alt="Ethics"  height= 45 draggable="true" class="icon" id='icon153'>
+                    </div>
+                    <div class="copyableB mr-3">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-small-solid-no-words.png" alt="Trends"  height= 45 draggable="true" class="icon" id='icon154'>
+                    </div>
+                    <div class="copyableB">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-small-solid-no-words.png" alt="Unanswered Questions" height= 45 draggable="true"  class="icon" id='icon155'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyableB mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-small-solid-no-words.png" alt="Origin"  class="icon" id='icon156' height= 45 draggable="true">
+                    </div>
+                    <div class="copyableB mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-small-solid-no-words.png" alt="Contribution"  class="icon" id='icon157' height= 45 draggable="true" >
+                    </div>
+                    <div class="copyableB mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-small-solid-no-words.png" alt="Parallel"  class="icon" id='icon158' height= 45 draggable="true">
+                    </div>
+                    <div class="copyableB mr-1">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-small-solid-no-words.png" alt="Convergence"  class="icon" id='icon159' height= 45 draggable="true">
+                    </div>
+                    <div class="copyableB">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-small-solid-no-words.png" alt="Paradox"  class="icon" id='icon160' height= 45 draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emojis No Background -->
+            <div class="modal-emojisNoBackground mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-small-outline-no-words.png" alt="Across Disciplines" height = '35' draggable="true" class="icon Em" id='icon161'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-small-outline-no-words.png" alt="Big Idea" height = '35' draggable="true" class="icon Em" id='icon162'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-small-outline-no-words.png" alt="Details" height = '35' draggable="true" class="icon Em" id='icon163'>
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-small-outline-no-words.png" alt="Language of Discipline" height = '35' draggable="true" class="icon Em" id='icon164'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-small-outline-no-words.png" alt="Multiple Perspectives" height = '35' draggable="true" class="icon Em" id='icon165'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-small-outline-no-words.png" alt="Over Time" height = '35' draggable="true" class="icon Em" id='icon166'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-small-outline-no-words.png" alt="Rules" height = '35' draggable="true" class="icon Em" id='icon167'>
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-small-outline-no-words.png" alt="Patterns" height = '35' draggable="true" class="icon Em" id='icon168'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyableE mr-3 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-small-outline-no-words.png" alt="Ethics" height = '35' draggable="true" class="icon Em" id='icon169'>
+                    </div>
+                    <div class="copyableE mr-3 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-small-outline-no-words.png" alt="Trends" height = '35' draggable="true" class="icon Em" id='icon170'>
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-small-outline-no-words.png" alt="Unanswered Questions" height = '35' draggable="true" class="icon Em" id='icon171'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-small-outline-no-words.png" alt="Origin" class="icon Em" id='icon172' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-small-outline-no-words.png" alt="Contribution" class="icon Em" id='icon173' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-small-outline-no-words.png" alt="Parallel" class="icon Em" id='icon174' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-small-outline-no-words.png" alt="Convergence" class="icon Em" id='icon175' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-small-outline-no-words.png" alt="Paradox" class="icon Em" id='icon176' height = '35' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emojis Black and white -->
+            <div class="modal-emojisBlackWhite mt-3 fade-in">
+                <div class="flex">
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/AD-BW-outline-small-no-words.png" alt="Across Disciplines" height = '35' draggable="true" class="icon Em" id='icon177'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Big-Idea-BW-outline-small-no-words.png" alt="Big Idea" height = '35' draggable="true" class="icon Em" id='icon178'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Details-BW-outline-small-no-words.png" alt="Details" height = '35' draggable="true" class="icon Em" id='icon179'>
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/LOD-BW-outline-small-no-words.png" alt="Language of Discipline" height = '35' draggable="true" class="icon Em" id='icon180'>
+                    </div>
+                </div>
+
+                <div class="mt-1 mb-1 flex">
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/MP-BW-outline-small-no-words.png" alt="Multiple Perspectives" height = '35' draggable="true" class="icon Em" id='icon181'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Over-Time-BW-outline-small-no-words.png" alt="Over Time" height = '35' draggable="true" class="icon Em" id='icon182'>
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Rules-BW-outline-small-no-words.png" alt="Rules" height = '35' draggable="true" class="icon Em" id='icon183'>
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Patterns-BW-outline-small-no-words.png" alt="Patterns" height = '35' draggable="true" class="icon Em" id='icon184'>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div class="copyableE mr-3 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Ethics-BW-outline-small-no-words.png" alt="Ethics" height = '35' draggable="true" class="icon Em" id='icon185'>
+                    </div>
+                    <div class="copyableE mr-3 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Trends-BW-outline-small-no-words.png" alt="Trends" height = '35' draggable="true" class="icon Em" id='icon186'>
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/UA-BW-outline-small-no-words.png" alt="Unanswered Questions" height = '35' draggable="true" class="icon Em" id='icon187'>
+                    </div>
+                </div>
+
+                <div class="mt-1 flex">
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Origin-BW-outline-small-no-words.png" alt="Origin" class="icon Em" id='icon188' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Contribution-BW-outline-small-no-words.png" alt="Contribution" class="icon Em" id='icon189' height = '35' draggable="true" >
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Parallel-BW-outline-small-no-words.png" alt="Parallel" class="icon Em" id='icon190' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE mr-2 box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Convergence-BW-outline-small-no-words.png" alt="Convergence" class="icon Em" id='icon191' height = '35' draggable="true">
+                    </div>
+                    <div class="copyableE box">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/Paradox-BW-outline-small-no-words.png" alt="Paradox" class="icon Em" id='icon192' height = '35' draggable="true">
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Icon Bars -->
+            <div class="modal-iconBars mt-3 fade-in">
+                <div class="bars">
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/7.5-inch_color_DCIconGroup_2013-1024x94.jpg" alt="All Icons with Background" draggable="true" class="iconBar" id='icon193'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/7.5-inch_BW_DCIconGroup_2013-1024x94.jpg" alt="All Icons Black & White" draggable="true" class="iconBar" id='icon194'>
+                    </div>
+                    <div class="copyable">
+                        <img src="https://courses.jtayloreducation.com/app/uploads/2020/12/CI-Bar-without-words.jpg" alt="All Content Imparative Icons" draggable="true" class="iconBar" id='icon195'>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 'Icon Copied!' message displayed when icon clicked -->
+        <div>
+            <b id='msg'></b>
+        </div>
+
+    </div>
+
+</body>
+</html>

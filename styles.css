@@ -1,0 +1,173 @@
+html, body {
+    font-family: 'Open Sans', 'sans-serif';
+    width: 352px;
+    min-height: 400px;
+    background-image: linear-gradient(to bottom right, white, rgba(173, 216, 230, 0.342));
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+#selection{
+    box-shadow: 3px 3px 5px lightgray;
+}
+
+select:hover{
+    box-shadow: 3px 3px 5px gray;
+}
+
+.title{
+    margin-left: 15px;
+    text-align: center;
+}
+
+#mainTitle, #subTitle{
+    font-weight: bold;
+    text-shadow: 3px 3px 5px lightgray;
+}
+
+#info{
+    font-size: 10px;
+    text-shadow: 3px 3px 5px lightgray;
+}
+
+.icon {
+    display: inline-block;
+    box-shadow: 3px 3px 3px lightgray;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+}
+.Em{
+    margin: 5px;
+}
+
+.box{
+    box-shadow: 2px 2px 2px rgba(211, 211, 211, 0.774);
+    border-radius: 5px;
+}
+
+.iconBar{
+    box-shadow: 3px 3px 3px lightgray;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    height: auto;
+    width: 100%;
+}
+
+#icon195{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.bars{
+    min-height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconBar:hover{
+    box-shadow: 3px 3px 5px gray;
+}
+
+.iconBar:active{
+    box-shadow: 3px 3px 5px black;
+}
+
+.icon:hover{
+    box-shadow: 3px 3px 5px gray;
+}
+
+.icon:active{
+    box-shadow: 3px 3px 5px black;
+}
+
+.logo-icon {
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px lightgray;
+}
+
+.logo-icon:hover{
+    box-shadow: 3px 3px 5px gray;
+}
+
+.modal-spanishBlackWhite, .modal-iconsWithBackground, .modal-spanishNoBackground, .modal-iconsNoBackground, 
+.modal-blackWhiteIcons, .modal-spanishBackground, .modal-wordsBackground, .modal-wordsNoBackground, .modal-blackWhiteWords, 
+.modal-emojisBackground, .modal-emojisNoBackground, .modal-emojisBlackWhite, .modal-iconBars {
+    display: none;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyable, .copyableS, .copyableE{
+    display: inline;
+}
+
+#msg{
+    display: block;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.fade-in {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s;
+    -moz-animation: fadeIn ease 2s;
+    -o-animation: fadeIn ease 2s;
+    -ms-animation: fadeIn ease 2s;
+}
+    @keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+        }
+    }
+    @-moz-keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+    @-o-keyframes fadeIn {
+        0% {
+            opacity:0;
+        }
+        100% {
+            opacity:1;
+        }
+    }
+    @-ms-keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
