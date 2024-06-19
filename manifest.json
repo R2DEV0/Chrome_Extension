@@ -1,10 +1,13 @@
 {
-    "manifest_version": 2,
     "name": "Depth & Complexity Icons",
     "description": "Quick launch Depth & Complexity Icons",
-    "version": "1.0.8",
-    "icons":{"128": "128Icon.png"},
-    "browser_action":{
+    "version": "1.4.0",
+    "manifest_version": 3,
+    "icons":{
+        "128": "128Icon.png" 
+    },
+    "action":{
+        "default_icon": "128Icon.png",
         "default_title": "Depth & Complexity Icons",
         "default_popup": "popup.html"
     }

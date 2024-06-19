@@ -16,18 +16,31 @@ select:hover{
     box-shadow: 3px 3px 5px gray;
 }
 
-.title{
-    margin-left: 15px;
-    text-align: center;
+.topDiv{
+    display: fixed;
 }
 
-#mainTitle, #subTitle{
-    font-weight: bold;
-    text-shadow: 3px 3px 5px lightgray;
+.mainDiv{
+    overflow-y: auto;
+    max-height: 350px;
 }
+
+#mainTitle{
+    font-size: 12px;
+}
+
+#subTitle{
+    font-size: 18px;
+}
+
 
 #info{
     font-size: 10px;
+    text-shadow: 3px 3px 5px lightgray;
+}
+
+.detail{
+    font-size: 12px;
     text-shadow: 3px 3px 5px lightgray;
 }
 
@@ -43,11 +56,6 @@ select:hover{
 }
 .Em{
     margin: 5px;
-}
-
-.box{
-    box-shadow: 2px 2px 2px rgba(211, 211, 211, 0.774);
-    border-radius: 5px;
 }
 
 .iconBar{
@@ -94,27 +102,24 @@ select:hover{
 }
 
 .logo-icon {
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px lightgray;
+    border-radius: 3px;
 }
 
 .logo-icon:hover{
     box-shadow: 3px 3px 5px gray;
 }
 
-.modal-spanishBlackWhite, .modal-iconsWithBackground, .modal-spanishNoBackground, .modal-iconsNoBackground, 
-.modal-blackWhiteIcons, .modal-spanishBackground, .modal-wordsBackground, .modal-wordsNoBackground, .modal-blackWhiteWords, 
-.modal-emojisBackground, .modal-emojisNoBackground, .modal-emojisBlackWhite, .modal-iconBars {
+.modal-spanishIcons, .modal-iconsOnly, .modal-wordsIcons, .modal-emojis, .modal-iconBars {
     display: none;
 }
 
 .flex{
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
 }
 
-.copyable, .copyableS, .copyableE{
+.copyable, .copyableS, .copyableE, .copyableB{
     display: inline;
 }
 
